@@ -50,7 +50,7 @@ def request_otp():
             return jsonify({"error": "User not found"}), 404
         
         # Generate 6-digit OTP
-        otp = str(random.randint(0, 99)).zfill(6)
+        otp = str(random.randint(0, 999999)).zfill(6)
         otps_db[email] = otp
         
         print(f"\n{'='*50}")
